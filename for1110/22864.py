@@ -17,24 +17,21 @@
 하루에 번 아웃이 되지 않도록 일을 할 때 최대 얼마나 많은 일을 할 수 있는지 출력한다.
 """
 
-a,b,c,m=map(int,input().split())
 prd=0
-worksum=0
+done=0
 
-worklst=[]
+a,b,c,m=map(int,input().split())
 
 for i in range(24):
-    #일하기
-    prd+=a*i
-    worksum+=b*i
-    for j in range(24-i):
-        #쉬기
-        prd-=c*j
-        if prd>m:
-            worklst.append(0)
-            break
-    worklst.append(worksum)
-    prd=0
-    worksum=0
+    if a>m: #일 한번만 해도 쓰러짐
+        break
+    else:
+        if 0<=prd+a<=m: #일한후의 피로도로 계산
+            prd+=a
+            done+=b
+        else:
+            prd-=c
+            if prd<0:
+                prd=0
 
-print(worklst)
+print(done)
