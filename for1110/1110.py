@@ -28,8 +28,10 @@ count=0
 
 while True:
     count+=1
+    """
     if old<10:
         old*=10
+    """
     oldsum=old//10+old%10
     new=(old%10)*10+(oldsum%10)
     #new==old라고 써서 틀림
