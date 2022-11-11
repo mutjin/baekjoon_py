@@ -20,8 +20,7 @@ n=int(input().split())
 lst=[[] for i in range(n)]
 for i in range(n):
     p,q,r=input().split()
-    pin=ord(p)-65
-    lst[pin].append(q)
-    lst[pin].append(r)
-
+    lst[i].append(p)
+    lst[i].append(q)
+    lst[i].append(r)
 print(lst)
